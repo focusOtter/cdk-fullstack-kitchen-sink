@@ -1,0 +1,12 @@
+{
+  "ProductAuthStack": {
+    "UserPoolClientId": "7igeltilemuct8fc8qrtag6e4h",
+    "UserPoolId": "us-east-1_stbvx4HEX",
+    "ExportsOutputRefProductUserpoolClientB575D22F96B1DF2B": "7igeltilemuct8fc8qrtag6e4h",
+    "ExportsOutputRefProductUserpoolCCF86EC0B008D6D1": "us-east-1_stbvx4HEX"
+  },
+  "ProductDatabaseStack": {
+    "ExportsOutputFnGetAttProductTableB8D4E9EDArn9E8D595F": "arn:aws:dynamodb:us-east-1:521776702104:table/ProductDatabaseStack-ProductTableB8D4E9ED-T0G99GU2L71L",
+    "ExportsOutputRefProductTableB8D4E9ED1EF21745": "ProductDatabaseStack-ProductTableB8D4E9ED-T0G99GU2L71L"
+  }
+}

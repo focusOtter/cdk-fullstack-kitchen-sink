@@ -47,32 +47,32 @@ export class APIStack extends Stack {
 			xrayEnabled: true,
 		})
 
-		const TodoDataSource = api.addDynamoDbDataSource(
-			'TodoDataSourceSamples',
+		const ProductDataSource = api.addDynamoDbDataSource(
+			'ProductDataSourceSamples',
 			props.sampleTable
 		)
 
-		api.grantQuery(props.unauthenticatedRole, 'getTodo', 'listTodos')
+		api.grantQuery(props.unauthenticatedRole, 'getProduct', 'listProducts')
 
-		TodoDataSource.createResolver({
+		ProductDataSource.createResolver({
 			typeName: 'Query',
-			fieldName: 'getTodo',
+			fieldName: 'getProduct',
 			requestMappingTemplate: MappingTemplate.dynamoDbGetItem('id', 'id'),
 			responseMappingTemplate: MappingTemplate.dynamoDbResultItem(),
 		})
 
-		TodoDataSource.createResolver({
+		ProductDataSource.createResolver({
 			typeName: 'Mutation',
-			fieldName: 'createTodo',
+			fieldName: 'createProduct',
 			requestMappingTemplate: MappingTemplate.dynamoDbPutItem(
 				PrimaryKey.partition('id').auto(),
 				Values.projecting('input')
 			),
 			responseMappingTemplate: MappingTemplate.dynamoDbResultItem(),
 		})
-		TodoDataSource.createResolver({
+		ProductDataSource.createResolver({
 			typeName: 'Query',
-			fieldName: 'listTodos',
+			fieldName: 'listProducts',
 			requestMappingTemplate: MappingTemplate.dynamoDbScanTable(),
 			responseMappingTemplate: MappingTemplate.dynamoDbResultList(),
 		})
