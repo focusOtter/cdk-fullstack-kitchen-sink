@@ -8,5 +8,20 @@
   "ProductDatabaseStack": {
     "ExportsOutputFnGetAttProductTableB8D4E9EDArn9E8D595F": "arn:aws:dynamodb:us-east-1:521776702104:table/ProductDatabaseStack-ProductTableB8D4E9ED-T0G99GU2L71L",
     "ExportsOutputRefProductTableB8D4E9ED1EF21745": "ProductDatabaseStack-ProductTableB8D4E9ED-T0G99GU2L71L"
+  },
+  "ProductAppSyncAPIStack": {
+    "GraphQLAPIID": "e7jjmgqjtbf73muowy2lidmpju",
+    "ExportsOutputFnGetAttAPISamples780B5D88ApiId3077EBEE": "e7jjmgqjtbf73muowy2lidmpju",
+    "GraphQLAPIURL": "https://h4jzhgoe2fe3tkhjvoiofabiby.appsync-api.us-east-1.amazonaws.com/graphql"
+  },
+  "ProductIdentityStack": {
+    "ExportsOutputRefProductIdentityPoolUnauthenticatedRoleB676000166F601AC": "ProductIdentityStack-ProductIdentityPoolUnauthenti-VHX4RZWGE1H3",
+    "ExportsOutputRefProductIdentityPoolAuthenticatedRole7D70DE74DB087A5A": "ProductIdentityStack-ProductIdentityPoolAuthentica-1LYYPUGTVV3IR",
+    "IdentityPoolId": "us-east-1:975506aa-0b2d-4b8a-b8da-2f6faf3f6678"
+  },
+  "ProductFileStorageStack": {
+    "BucketName": "productfilestoragestack-productbucket674e806c-o89hnl519a9i",
+    "BucketRegion": "us-east-1",
+    "distDomainName": "d340dtlvrclg77.cloudfront.net"
   }
 }
