@@ -10,6 +10,7 @@ import {
 	MappingTemplate,
 	PrimaryKey,
 	Values,
+	UserPoolDefaultAction,
 } from '@aws-cdk/aws-appsync-alpha'
 import { UserPool } from 'aws-cdk-lib/aws-cognito'
 import { IRole } from 'aws-cdk-lib/aws-iam'
@@ -34,6 +35,7 @@ export class APIStack extends Stack {
 				defaultAuthorization: {
 					authorizationType: AuthorizationType.USER_POOL,
 					userPoolConfig: {
+						defaultAction: UserPoolDefaultAction.ALLOW,
 						userPool: props.userpool,
 					},
 				},
@@ -48,7 +50,7 @@ export class APIStack extends Stack {
 		})
 
 		const ProductDataSource = api.addDynamoDbDataSource(
-			'ProductDataSourceSamples',
+			'ProductDataSource',
 			props.sampleTable
 		)
 

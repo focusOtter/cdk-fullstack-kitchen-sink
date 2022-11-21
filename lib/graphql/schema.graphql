@@ -4,13 +4,19 @@ type Query {
 }
 
 type Mutation {
-	createProduct(input: ProductInput): Product @aws_cognito_user_pools
+	createProduct(input: ProductInput!): Product @aws_cognito_user_pools
 }
 
-type Product {
+type Subscription {
+	onProductCreate: Product @aws_subscribe(mutations: ["createProduct"])
+}
+
+type Product @aws_iam @aws_cognito_user_pools {
 	id: ID!
-	name: String!
+	name: String
 	description: String
+	price: Float
+	isLive: Boolean
 	imgKey: String
 }
 
@@ -18,5 +24,7 @@ input ProductInput {
 	id: ID
 	name: String!
 	description: String
-	imgkey: String
+	imgKey: String!
+	price: Float!
+	isLive: Boolean
 }
